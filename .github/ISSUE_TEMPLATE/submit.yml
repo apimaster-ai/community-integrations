@@ -1,0 +1,78 @@
+name: Submit an integration
+description: Add your project to the Community Integrations page
+title: "[integration] <project name>"
+labels: ["integration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for building something. New projects are welcome — star count is not a criterion.
+
+        What we check: a public repo with a working README, a license, real calls to an
+        OpenAI-compatible endpoint, and a commit in the last six months.
+
+        You can ask us to change the description or remove the listing at any time, and we
+        will do it the same day.
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/you/your-project
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: One-sentence description
+      description: What it does, in the words you would use to a fellow developer. We will not rewrite it into marketing copy.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Agents
+        - Chat UIs
+        - Image & video
+        - Frameworks
+        - Tooling
+        - Automation
+    validations:
+      required: true
+
+  - type: input
+    id: install
+    attributes:
+      label: Install command (optional)
+      placeholder: npx your-project / pip install your-project / ComfyUI Manager
+
+  - type: dropdown
+    id: referral
+    attributes:
+      label: Do you want a referral code?
+      description: Optional, and it has no effect on whether we list you. If you use one, please mark it as a referral link in your README.
+      options:
+        - "No thanks"
+        - "Yes, tell me how it works"
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: How should we reach you?
+      placeholder: email, or "GitHub only"
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: The repository is public and has a license
+          required: true
+        - label: I maintain this project (or have the maintainer's agreement to submit it)
+          required: true

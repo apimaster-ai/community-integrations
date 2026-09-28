@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Integrations</title>
+<meta name="description" content="Open-source projects that work with APIMaster, maintained by their own authors.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #0f1115;
+    --muted: #6b7280;
+    --line: #e6e8eb;
+    --card: #fbfbfc;
+    --accent: #5b5bd6;
+    --badge-official-bg: #eef0ff;
+    --badge-official-fg: #4340c4;
+    --badge-community-bg: #e9f7ef;
+    --badge-community-fg: #197a4a;
+    --radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0e11; --fg: #e8eaed; --muted: #99a0aa; --line: #22262c; --card: #13161a;
+      --accent: #9a98ff;
+      --badge-official-bg: #1d1c3a; --badge-official-fg: #b4b2ff;
+      --badge-community-bg: #10281c; --badge-community-fg: #74d3a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.6 ui-sans-serif, -apple-system, "Segoe UI", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 16px 96px; }
+  header h1 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); max-width: 62ch; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0 24px; }
+  .filters button {
+    font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .card {
+    border: 1px solid var(--line); border-radius: var(--radius); background: var(--card);
+    padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .card .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card h2 { font-size: 16px; margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 600; letter-spacing: 0.02em; }
+  .badge.official { background: var(--badge-official-bg); color: var(--badge-official-fg); }
+  .badge.community { background: var(--badge-community-bg); color: var(--badge-community-fg); }
+  .summary { margin: 0; color: var(--fg); font-size: 14px; }
+  .meta { color: var(--muted); font-size: 12px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .install { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+    background: rgba(127,127,127,0.1); padding: 6px 8px; border-radius: 6px; overflow-x: auto; white-space: nowrap; }
+  .actions { display: flex; gap: 8px; margin-top: auto; padding-top: 6px; }
+  .actions a {
+    font-size: 13px; text-decoration: none; padding: 7px 12px; border-radius: 8px;
+    border: 1px solid var(--line); color: var(--fg);
+  }
+  .actions a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .section-title { margin: 40px 0 14px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 13px; }
+  footer h3 { font-size: 14px; color: var(--fg); margin: 0 0 8px; }
+  footer ul { margin: 0 0 18px; padding-left: 18px; }
+  a { color: var(--accent); }
+  .empty { color: var(--muted); font-size: 14px; padding: 24px 0; }
+  @media (max-width: 520px) { .wrap { padding-top: 36px; } header h1 { font-size: 23px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Community Integrations</h1>
+    <p>
+      Open-source projects that talk to APIMaster. The ones marked <strong>community</strong>
+      are built and maintained by their own authors — they are not our products, and each card
+      links to the author's repository.
+    </p>
+  </header>
+
+  <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+
+  <div id="content"></div>
+
+  <footer>
+    <h3>Submit your integration</h3>
+    <p>
+      New projects are welcome; star count is not a criterion. We look for a public repo with a
+      working README, a license, real calls to an OpenAI-compatible endpoint, and a commit in the
+      last six months.
+      <a href="https://github.com/apimaster-ai/community-integrations/issues/new">Open an issue →</a>
+    </p>
+    <h3>Our commitments</h3>
+    <ul>
+      <li>If you want your project's description changed, or the listing removed, we do it the same day — no questions.</li>
+      <li>If our endpoints or parameters change, we open the follow-up pull request in your repo ourselves.</li>
+      <li>Star counts are fetched on a schedule and shown with the date they were read. We do not inflate them.</li>
+    </ul>
+    <p id="updated"></p>
+  </footer>
+</div>
+
+<script>
+  const CATEGORIES = [
+    ['all', 'All'],
+    ['agent', 'Agents'],
+    ['chat-ui', 'Chat UIs'],
+    ['image-video', 'Image & video'],
+    ['framework', 'Frameworks'],
+    ['tooling', 'Tooling'],
+    ['automation', 'Automation'],
+  ];
+
+  let data = { integrations: [] };
+  let active = 'all';
+
+  const escapeHtml = (value) =>
+    String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+
+  function card(item) {
+    const stars =
+      typeof item.stars === 'number'
+        ? `<span title="star count as read on ${escapeHtml(item.stars_checked_at ?? 'unknown date')}">★ ${item.stars}</span>`
+        : '';
+    return `
+      <article class="card">
+        <div class="top">
+          <h2>${escapeHtml(item.name)}</h2>
+          <span class="badge ${item.kind === 'official' ? 'official' : 'community'}">${item.kind === 'official' ? 'official' : 'community'}</span>
+        </div>
+        <p class="summary">${escapeHtml(item.summary)}</p>
+        <div class="meta">
+          <span>${escapeHtml(item.language || '—')}</span>
+          ${stars ? `<span>${stars}</span>` : ''}
+          <span>by <a href="${escapeHtml(item.author?.url || '#')}" rel="noopener">${escapeHtml(item.author?.name || 'unknown')}</a></span>
+        </div>
+        ${item.install ? `<div class="install">${escapeHtml(item.install)}</div>` : ''}
+        <div class="actions">
+          <a class="primary" href="${escapeHtml(item.repo)}" rel="noopener">Repository</a>
+          ${item.docs ? `<a href="${escapeHtml(item.docs)}" rel="noopener">Docs</a>` : ''}
+        </div>
+      </article>`;
+  }
+
+  function render() {
+    const filtered = data.integrations.filter((item) => active === 'all' || item.category === active);
+    const official = filtered.filter((item) => item.kind === 'official');
+    const community = filtered.filter((item) => item.kind !== 'official');
+
+    const section = (title, items) =>
+      items.length
+        ? `<h2 class="section-title">${title}</h2><div class="grid">${items.map(card).join('')}</div>`
+        : '';
+
+    document.getElementById('content').innerHTML =
+      filtered.length
+        ? section('Maintained by APIMaster', official) + section('Maintained by the community', community)
+        : '<p class="empty">Nothing in this category yet.</p>';
+  }
+
+  function renderFilters() {
+    document.getElementById('filters').innerHTML = CATEGORIES.map(
+      ([id, label]) => `<button data-cat="${id}" aria-pressed="${id === active}">${label}</button>`
+    ).join('');
+    document.getElementById('filters').addEventListener('click', (event) => {
+      const button = event.target.closest('button');
+      if (!button) return;
+      active = button.dataset.cat;
+      renderFilters();
+      render();
+    });
+  }
+
+  async function load() {
+    try {
+      const response = await fetch('integrations.json', { cache: 'no-cache' });
+      data = await response.json();
+    } catch (error) {
+      document.getElementById('content').innerHTML =
+        '<p class="empty">Could not load integrations.json. Serve this page over HTTP rather than opening the file directly.</p>';
+      return;
+    }
+    document.getElementById('updated').textContent = data.updated_at ? `Last updated ${data.updated_at}.` : '';
+    renderFilters();
+    render();
+  }
+
+  load();
+</script>
+</body>
+</html>

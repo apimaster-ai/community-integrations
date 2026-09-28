@@ -1,0 +1,176 @@
+{
+  "updated_at": "2026-09-23",
+  "note": "stars are fetched by a scheduled job and written back here; the page never calls the GitHub API at render time",
+  "integrations": [
+    {
+      "id": "comfyui-apimaster",
+      "name": "ComfyUI-APIMaster",
+      "kind": "official",
+      "category": "image-video",
+      "summary": "Image and video nodes for ComfyUI. Standard library only — installing it cannot break your Python environment.",
+      "repo": "https://github.com/apimaster-ai/ComfyUI-APIMaster",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-19",
+      "language": "Python",
+      "install": "ComfyUI Manager → search \"APIMaster\"",
+      "docs": "https://apimaster.ai/docs/api/images"
+    },
+    {
+      "id": "apimaster-cli",
+      "name": "apimaster-cli",
+      "kind": "official",
+      "category": "tooling",
+      "summary": "Check a key, list models, measure latency, probe model identity, generate images and video — from the terminal.",
+      "repo": "https://github.com/apimaster-ai/apimaster-cli",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-19",
+      "language": "JavaScript",
+      "install": "npx @apimaster/cli check",
+      "docs": "https://apimaster.ai/docs/getting-started/first-request"
+    },
+    {
+      "id": "api-health-action",
+      "name": "api-health-action",
+      "kind": "official",
+      "category": "automation",
+      "summary": "Scheduled availability, latency and model-identity checks for any OpenAI-compatible endpoint, as a GitHub Action.",
+      "repo": "https://github.com/apimaster-ai/api-health-action",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-19",
+      "language": "JavaScript",
+      "install": "uses: apimaster-ai/api-health-action@v1",
+      "docs": "https://github.com/apimaster-ai/api-health-action#readme"
+    },
+    {
+      "id": "ai-provider-switcher",
+      "name": "ai-provider-switcher",
+      "kind": "official",
+      "category": "tooling",
+      "summary": "Point Claude Code, Codex, OpenCode and Continue at a different provider with one command — and see where they point now.",
+      "repo": "https://github.com/apimaster-ai/ai-provider-switcher",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-19",
+      "language": "JavaScript",
+      "install": "npx @apimaster/ai-provider-switcher status",
+      "docs": "https://github.com/apimaster-ai/ai-provider-switcher#readme"
+    },
+    {
+      "id": "agent-skills",
+      "name": "agent-skills",
+      "kind": "official",
+      "category": "agent",
+      "summary": "A Claude Code skill and an AGENTS.md pack that teach coding agents the endpoints, the two base URLs and the failure modes.",
+      "repo": "https://github.com/apimaster-ai/agent-skills",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-19",
+      "language": "Markdown",
+      "install": "cp -r claude/apimaster ~/.claude/skills/",
+      "docs": "https://apimaster.ai/docs/cli/claude-code"
+    },
+    {
+      "id": "llm-apimaster",
+      "name": "llm-apimaster",
+      "kind": "official",
+      "category": "tooling",
+      "summary": "Plugin for Simon Willison's llm CLI: chat models as apimaster/<id>, plus image and video commands llm has no model type for.",
+      "repo": "https://github.com/apimaster-ai/llm-apimaster",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-23",
+      "language": "Python",
+      "install": "llm install llm-apimaster",
+      "docs": "https://github.com/apimaster-ai/llm-apimaster#readme"
+    },
+    {
+      "id": "n8n-nodes-apimaster",
+      "name": "n8n-nodes-apimaster",
+      "kind": "official",
+      "category": "automation",
+      "summary": "n8n community node for chat, image and video generation. Long video jobs can be polled with a separate Get operation instead of holding a worker.",
+      "repo": "https://github.com/apimaster-ai/n8n-nodes-apimaster",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-23",
+      "language": "TypeScript",
+      "install": "Settings → Community Nodes → @apimaster/n8n-nodes-apimaster",
+      "docs": "https://github.com/apimaster-ai/n8n-nodes-apimaster#readme"
+    },
+    {
+      "id": "dify-plugin-apimaster",
+      "name": "dify-plugin-apimaster",
+      "kind": "official",
+      "category": "framework",
+      "summary": "Dify plugin: a model provider that validates your key on Save, plus image and video generation tools for workflows and agents.",
+      "repo": "https://github.com/apimaster-ai/dify-plugin-apimaster",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-23",
+      "language": "Python",
+      "install": "Marketplace listing pending; package from source (see README)",
+      "docs": "https://github.com/apimaster-ai/dify-plugin-apimaster#readme"
+    },
+    {
+      "id": "apimaster-ai-provider",
+      "name": "@apimaster/ai-sdk-provider",
+      "kind": "official",
+      "category": "framework",
+      "summary": "Vercel AI SDK provider built on @ai-sdk/openai-compatible, adding generateVideo, which the AI SDK has no model type for.",
+      "repo": "https://github.com/apimaster-ai/apimaster-ai-provider",
+      "author": {
+        "name": "APIMaster",
+        "url": "https://github.com/apimaster-ai"
+      },
+      "stars": 0,
+      "stars_checked_at": "2026-09-23",
+      "language": "TypeScript",
+      "install": "npm i @apimaster/ai-sdk-provider",
+      "docs": "https://github.com/apimaster-ai/apimaster-ai-provider#readme"
+    },
+    {
+      "id": "example-community-entry",
+      "name": "(your project here)",
+      "kind": "community",
+      "category": "chat-ui",
+      "summary": "Community integrations appear in this section, credited to their author, linking to their repository. Submit yours — new projects are welcome, star count is not a criterion.",
+      "repo": "https://github.com/apimaster-ai/community-integrations/issues/new?template=submit.yml",
+      "author": {
+        "name": "You",
+        "url": "https://github.com/apimaster-ai/community-integrations"
+      },
+      "stars": null,
+      "stars_checked_at": null,
+      "language": "—",
+      "install": "open an issue",
+      "docs": "https://apimaster.ai/docs"
+    }
+  ]
+}
