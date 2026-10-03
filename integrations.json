@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02",
+  "updated_at": "2026-10-03",
   "note": "stars are fetched by a scheduled job and written back here; the page never calls the GitHub API at render time",
   "integrations": [
     {
@@ -14,7 +14,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "Python",
       "install": "ComfyUI Manager → search \"APIMaster\"",
       "docs": "https://apimaster.ai/docs/api/images"
@@ -31,7 +31,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "JavaScript",
       "install": "npx @apimaster/cli check",
       "docs": "https://apimaster.ai/docs/getting-started/first-request"
@@ -48,7 +48,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "JavaScript",
       "install": "uses: apimaster-ai/api-health-action@v1",
       "docs": "https://github.com/apimaster-ai/api-health-action#readme"
@@ -65,7 +65,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "JavaScript",
       "install": "npx @apimaster/ai-provider-switcher status",
       "docs": "https://github.com/apimaster-ai/ai-provider-switcher#readme"
@@ -82,7 +82,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "Markdown",
       "install": "cp -r claude/apimaster ~/.claude/skills/",
       "docs": "https://apimaster.ai/docs/cli/claude-code"
@@ -99,7 +99,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "Python",
       "install": "llm install llm-apimaster",
       "docs": "https://github.com/apimaster-ai/llm-apimaster#readme"
@@ -116,7 +116,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "TypeScript",
       "install": "Settings → Community Nodes → @apimaster/n8n-nodes-apimaster",
       "docs": "https://github.com/apimaster-ai/n8n-nodes-apimaster#readme"
@@ -133,7 +133,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "Python",
       "install": "Marketplace listing pending; package from source (see README)",
       "docs": "https://github.com/apimaster-ai/dify-plugin-apimaster#readme"
@@ -150,7 +150,7 @@
         "url": "https://github.com/apimaster-ai"
       },
       "stars": 0,
-      "stars_checked_at": "2026-10-02",
+      "stars_checked_at": "2026-10-03",
       "language": "TypeScript",
       "install": "npm i @apimaster/ai-sdk-provider",
       "docs": "https://github.com/apimaster-ai/apimaster-ai-provider#readme"
